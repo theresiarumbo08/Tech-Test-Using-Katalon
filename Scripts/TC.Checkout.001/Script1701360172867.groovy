@@ -17,9 +17,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+//open browser
 WebUI.openBrowser(null)
 
 WebUI.navigateToUrl("https://www.saucedemo.com/")
+
+//login
 
 WebUI.setText(findTestObject('Object Repository/Login/Page_Swag Labs/input_Swag Labs_user-name'), "standard_user")
 
@@ -29,16 +32,20 @@ WebUI.click(findTestObject('Object Repository/Login/Page_Swag Labs/input_Swag La
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Inventory/Page_Swag Labs/div_Swag Labs'), 0)
 
+//add product to cart
 WebUI.click(findTestObject('Object Repository/Cart/Page_Swag Labs/button_Add to cart'))
 
+//click icon cart
 WebUI.click(findTestObject('Object Repository/Cart/Page_Swag Labs/a_1'))
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Cart/Page_Swag Labs/div_Your Cart'), 0)
 
+//click button checkout
 WebUI.click(findTestObject('Object Repository/Checkout/Page_Swag Labs/button_Checkout'))
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Checkout/Page_Swag Labs/div_Checkout Your Information'), 0)
 
+//checkout information
 WebUI.setText(findTestObject('Object Repository/Checkout/Page_Swag Labs/input_Checkout Your Information_firstName'), "theresia")
 
 WebUI.setText(findTestObject('Object Repository/Checkout/Page_Swag Labs/input_Checkout Your Information_lastName'), "rumahorbo")
@@ -49,8 +56,10 @@ WebUI.click(findTestObject('Object Repository/Checkout/Page_Swag Labs/input_Canc
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Checkout/Page_Swag Labs/div_Checkout Overview'), 0)
 
+//checkout overview
 WebUI.click(findTestObject('Object Repository/Checkout/Page_Swag Labs/button_Finish'))
 
 WebUI.verifyElementPresent(findTestObject('Object Repository/Checkout/Page_Swag Labs/div_Checkout Complete'), 0)
 
+//close browser
 WebUI.closeBrowser()
